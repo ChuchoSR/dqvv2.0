@@ -1,0 +1,1228 @@
+/*=============================================================*/
+/*----    MAQUETADO GENERAL    ----*/
+
+body {
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: "futur", 'Open Sans', arial, sans-serif, helvetica;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}  
+
+.seccion_base {
+    width: 100%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+h1, h2 {
+    width: 100%;
+    font-family:"Mailart", 'Open Sans', arial, sans-serif, helvetica;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-shadow: 0 0 10px #4dbeff;
+    text-shadow: 0 0 20px #fff;
+    text-shadow: 0 0 25px #fff;
+}
+
+p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 1.2rem; 
+}
+
+a {
+    text-decoration: none;
+    height: auto;
+}
+
+
+/*----    FINAL MAQUETADO GENERAL    ----*/
+/*=============================================================*/
+
+
+/*=============================================================*/
+/*----    HEADER    ----*/
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #101726;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;  
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav {
+    width: 85%;
+    height: auto;
+    min-height: 60px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    line-height: 0.7rem;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+nav p {
+    font-size: 0.8rem;
+    padding: 0 20px;
+    margin: 0;
+}
+
+nav a:hover {
+    color: #efe215;
+}
+
+.logo_nav {
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo_nav img {
+    width: 55px;;
+    height: auto;
+}
+
+.menu-icon, #check, label.checkbtn {
+    display: none;
+}
+
+.menu_icon img{
+    width: 30px;
+}
+
+/*----    FINAL HEADER    ----*/
+/*=============================================================*/
+
+/*=============================================================*/
+/*----    HOME INICIO    ----*/
+
+.home {
+    min-height: 100vh;
+    background-color: #152749;
+    padding: 0;
+    background-image: url("../img/home_bg.png");
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.logo_home {
+    width: 34%;
+    height: auto;
+    margin: 3rem auto 1rem auto;
+}
+
+.logo_home img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.tagDQVV {
+    width: 90%;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 1rem auto;
+    height: auto;
+    transition-delay: 100ms;
+}
+
+/*----    FINAL HOME    ----*/
+/*=============================================================*/
+
+/*=============================================================*/
+
+/*----    PODCAST INICIO    ----*/
+
+.podcast {
+    min-height: 100vh;
+    background-color: #001333;
+    background-image: url("../img/about_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.info_bienvenida {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info_bienvenida p {
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 1.6rem;
+}
+
+.bat_right {
+    width: 200px;
+    height: auto;
+    margin: 0;
+    align-self: flex-end;
+}
+
+.bat_left {
+    width: 200px;
+    height: auto;
+    margin: 0;
+    align-self: flex-start;
+}
+
+
+/*----    FINAL PODCAST    ----*/
+/*=============================================================*/
+
+/*=============================================================*/
+/*----    EPISODIOS INICIO    ----*/
+
+.episodios {
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #1f2a56;
+    background: rgb(0,0,0);
+    background: -webkit-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(16,37,89,1) 15%, rgba(16,37,89,1) 75%, rgba(0,19,51,1) 90%, rgba(0,19,51,1) 100%);
+    background: -o-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(16,37,89,1) 15%, rgba(16,37,89,1) 75%, rgba(0,19,51,1) 90%, rgba(0,19,51,1) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(16,37,89,1) 15%, rgba(16,37,89,1) 75%, rgba(0,19,51,1) 90%, rgba(0,19,51,1) 100%);
+}
+
+.subtitulo_episodios {
+    width: 80%;
+    color: #efe215;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: normal;
+    margin: 1rem 0;
+}
+
+.contenedor_podcast {
+    width: 70%;
+    height: auto;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info_podcast {
+    box-sizing: border-box;
+    border: solid 3px #f9e005;
+    width: 30%;
+    height: auto;
+    min-height: 300px;
+    border-radius: 2rem;
+    margin: 40px 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail_podcast {
+    width: 30%;
+    min-height: 150px;
+    background-color: #17568c;
+    border-radius: 2rem;
+    margin: 40px 2rem;
+    border: solid 3px #f9e005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----    FINAL EPISODIOS    ----*/
+/*=============================================================*/
+
+/*=============================================================*/
+/*----    INTEGRANTES INICIO    ----*/
+
+.integrantes {
+    min-height: 90vh;
+    background-color: #000;
+    background-image: url("../img/integrantes_bg.png");
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+}
+
+.wrap_integrantes {
+    width: 100%;
+    height: auto;
+    min-height: 90vh;
+    text-align: center;
+    background: rgb(0,0,0);
+    background: -webkit-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%);  
+}
+
+.contenedor_integrantes {
+    width: 90%;
+    height: auto;
+    min-height: 300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja_integrante {
+    width: 25%;
+    max-width: 340px;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+    align-items: flex-end;
+    margin: 10px;
+    position: relative;
+}
+
+.caja_integrante img {
+    width: 100%;   
+    height: auto;
+}
+
+.info_integrante {
+    width: 100%;
+    height: 22%;
+    min-height: 50px;
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+}
+
+.datos_integrante {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.red_integrante {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red_integrante a {
+    font-size: 2rem;
+    color: #000;
+}
+
+.red_integrante a:hover {
+    color: #fff;
+}
+
+.nombre_integrante {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    line-height: 1.8rem;
+    margin: 0 0 0 1.2rem;
+}
+
+.cargo_integrante {
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    color: #000;
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 0 0 0 1.2rem;
+}
+
+/*----    FINAL INTEGRANTES   ----*/
+
+/*=============================================================*/
+
+/*=============================================================*/
+/*----    CONTACTO INICIO    ----*/
+
+.contacto {
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    background-color: #0a1934;
+    background-image: url("../img/contacto_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.wrap_contacto {
+    background: rgb(0,0,0);
+    background: -webkit-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 25%);
+    background: -o-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 25%);
+    background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 25%);
+}
+
+.formulario {
+    width: 30%;
+    margin: 0 auto;
+    padding: 10px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;   
+}
+
+.subtitulo_contacto {
+    width: 80%;
+    color: #efe215;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 1rem auto;
+    text-transform: uppercase;
+}
+
+label {
+    width: 100%;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    margin: 1.2rem .1rem .5rem 0 ;
+    height: auto;
+}
+
+input, textarea {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 17px 15px;
+    border: solid 2px #4a6d7d;
+    background-color: #02112b;
+    letter-spacing: 1px;
+    font-size: .8rem;
+    line-height: 1.2rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 150px;
+    max-height: 250px;
+}
+
+input::placeholder, textarea::placeholder {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #8b8e94;
+}
+
+.btn_enviar {
+    width: 55%;
+    height: auto;
+    margin: 2rem auto;
+    font-size: 1rem;
+    padding: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: .6rem;
+    color: #f5e102;
+    border: solid 2px #f5e102;
+    cursor: pointer;
+    background-color: #182843;
+}
+
+.btn_enviar:hover {
+    background-color: #f5e102;
+    color: #182843;
+}
+
+
+/*----    FINAL CONTACTO    ----*/
+/*=============================================================*/
+
+/*=============================================================*/
+/*----    FOOTER INICIO    ----*/
+
+footer {
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    background-color: #181a1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-flow: row-reverse;
+}
+
+.redes_footer {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.redes_footer a {
+    color: #f5e102;
+    font-size: 1.5rem;
+    margin: .5rem 1rem;
+}
+
+.redes_footer a:hover {
+    color: #fff;
+}
+
+.creditos {
+    width: 60%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.creditos p {
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    line-height: 1.8rem; 
+    margin: .5rem 1rem;
+}
+
+/*----     FINAL FOOTER   ----*/
+/*=============================================================*/
+
+/*----    MEDIA QUERYS    ----*/
+
+/*----    MONITORES GRANDES    ----*/
+/*  MIN-WIDTH 1386 */
+@media only screen and (min-width: 1387px)  {
+    
+    .caja_integrante {
+        width: 30%;
+        max-width: 330px;
+    }
+
+}
+
+/*----    MONITORES NORMALES    ----*/
+/*  Desde 1025 a 1328-1386 */
+@media only screen and (min-width: 1125px) and (max-width: 1386px)  {
+
+    .caja_integrante {
+        width: 30%;
+        max-width: 330px;
+    }
+    
+    .formulario {
+        width: 35%;
+    }
+
+}
+
+/*----    LAPTOPS    ----*/
+/*  Desde 961 a 1024 */
+@media only screen and (min-width: 961px) and (max-width: 1124px)  {    
+
+
+    /*--======== PODCAST ========--*/
+    .info_bienvenida {
+        width: 100%;
+        margin: 0;
+    }
+     
+    .info_bienvenida img {
+        width: 10%;
+    }
+    
+    .info_bienvenida p {
+        width: 80%;
+    }
+    
+    .bat_right, .bat_left {
+        margin: 2rem 0;
+        align-self: center;
+    }
+    
+    /*--======== EPISODIOS ========--*/ 
+    .contenedor_podcast {
+        width: 80%;
+    }
+     
+    /*--======== INTEGRANTES ========--*/
+    .contenedor_integrantes {
+        width: 100%;
+    }
+    
+    .wrap_integrantes {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    .caja_integrante {
+        width: 30%;
+        max-width: 340px;
+    }
+    
+    .nombre_integrante {       
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    
+    /*--======== CONTACTO ========--*/ 
+    .formulario {
+        width: 50%;
+    }
+
+}
+
+/*----    TABLETS GRANDES    ----*/
+/*  desde 769 a 960  */
+@media only screen and (min-width: 769px) and (max-width: 960px)  {
+    /*--======== PODCAST ========--*/
+    .info_bienvenida {
+        width: 100%;
+        margin: 0;
+    }
+    
+    
+    .info_bienvenida img {
+        width: 10%;
+    }
+    
+    .info_bienvenida p {
+        width: 80%;
+    }
+    
+    .bat_right, .bat_left {
+        margin: 2rem 0;
+        align-self: center;
+    }
+    
+    /*--======== EPISODIOS ========--*/ 
+    .contenedor_podcast {
+        width: 100%;
+    }
+    
+    /*--======== INTEGRANTES ========--*/ 
+    .contenedor_integrantes {
+        width: 96%;
+        flex-wrap: wrap;
+    }
+    
+    .caja_integrante {
+        width: 36%;
+        margin: 1rem;
+    }
+    
+    .datos_integrante {
+        width: 85%;
+        height: auto;
+    }
+    
+    .nombre_integrante {       
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0 0 0 1.3rem;
+    }
+    
+    /*--======== CONTACTO ========--*/ 
+    .formulario {
+        width: 60%;
+    }
+
+}
+
+/*----    TABLETS PEQUEÑAS    ----*/
+/*  desde 481 a 768  */
+@media only screen and (min-width: 481px) and (max-width: 768px)  {
+    
+    /*--======== HOME ========--*/ 
+    body {
+        width: 100%;
+    }
+    
+    h1, h2 {
+        width: 96%;
+        margin: 2%;
+        text-align: center;
+    }
+ 
+/*------   menu hamburgueusa ------*/
+    label.checkbtn {
+        min-width: 50px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;    
+    }
+    
+    label.checkbtn img {
+        width: 50px;
+    }
+    .menu-icon{
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    .nav_menu ul{
+        display: block;
+        position: fixed;
+        top:70px;
+        left:-100%;
+        background: #222;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba(16, 26, 38, .9);
+    }
+    
+     .nav_menu ul li{
+        padding: 2.8rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        
+    }
+    
+    .nav_menu ul p {
+        display: none;
+    }
+    #menu_cerrar {
+        display: none;
+    }
+    #check:checked ~ label #menu_abrir{
+        display: none;
+    }
+    #check:checked ~ label #menu_cerrar{
+        display: block;
+    }
+    
+    #check:checked ~ ul{
+        left: 0;
+        transition: all .25s;
+    }
+    
+    #check:target {
+        left: 0;
+        transition: all .25s;
+    }
+    .nav_menu ul li a:checked {
+        left:-100%;
+    }
+
+    /*-----------------*/
+    
+    .logo_home {
+        width: 80%;
+    }
+    
+    /*--======== PODCAST ========--*/
+    .bat_right, .bat_left {
+        margin: 2rem 0;
+        align-self: center;
+    }
+    
+    .info_bienvenida, .info_bienvenida p {
+        width: 90%;
+    }
+    
+    /*--======== EPISODIOS ========--*/ 
+    .contenedor_podcast {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info_podcast, .thumbnail_podcast {
+        width: 60%;
+        margin: 1.5rem;
+    }
+    
+    /*--======== INTEGRANTES ========--*/
+    .contenedor_integrantes {
+        width: 96%;
+        flex-wrap: wrap;
+    }
+    
+    .caja_integrante {
+        width: 65%;
+        margin: 1rem;
+    }
+    
+    .datos_integrante {
+        width: 85%;
+        height: auto;
+    }
+    
+    .nombre_integrante {       
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0 0 0 1.3rem;
+    }
+    
+    /*--======== CONTACTO ========--*/
+    .formulario {
+        width: 80%;
+    }
+    
+    footer {
+        min-height: 120px;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .redes_footer {
+        width: 75%;
+        margin: 1rem auto;
+        justify-content: center;
+    }
+    
+    .redes_footer a {
+        margin: 1rem auto;
+    }
+    
+    .creditos {
+        width: 90%;
+        margin: 0 auto 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/*----    CELULARES BASE    ----*/
+/*  Max 480  */
+@media only screen and (min-width: 321px) and (max-width: 480px)  {
+    
+    /*--======== HOME ========--*/ 
+    h2, h3 {
+        width: 96%;
+        margin: 2%;
+        text-align: center;
+    }
+
+    .home {
+        background-image: url("../img/home_bg_min.jpg");
+        background-size: cover;
+        background-position: center bottom;
+    }
+    
+    /*------   menu hamburgueusa ------*/
+    label.checkbtn {
+        min-width: 50px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;    
+    }
+    
+    label.checkbtn img {
+        width: 50px;
+    }
+    .menu-icon{
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    .nav_menu ul{
+        display: block;
+        position: fixed;
+        top:70px;
+        left:-100%;
+        background: #222;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba(16, 26, 38, .9);
+    }
+    
+     .nav_menu ul li{
+        padding: 2.8rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        
+    }
+    
+    .nav_menu ul p {
+        display: none;
+    }
+    #menu_cerrar {
+        display: none;
+    }
+    #check:checked ~ label #menu_abrir{
+        display: none;
+    }
+    #check:checked ~ label #menu_cerrar{
+        display: block;
+    }
+    
+    #check:checked ~ ul{
+        left: 0;
+        transition: all .25s;
+    }
+    
+    #check:target {
+        left: 0;
+        transition: all .25s;
+    }
+    .nav_menu ul li a:checked {
+        left:-100%;
+    }
+
+    /*-----------------*/
+    
+    .logo_home {
+        width: 80%;
+    }
+    
+    /*--======== PODCAST ========--*/ 
+    .info_bienvenida img {
+        width: 30%;
+    }
+    
+    .podcast {
+        background: rgba(0,19,51,1);
+        background-image: url("../img/about_bg_min.jpg");
+    }
+    
+    .bat_right, .bat_left {
+        margin: 2rem 0;
+        align-self: center;
+    }
+    
+    .info_bienvenida {
+        width: 90%;
+    }
+
+    .info_bienvenida p {
+        width: 90%;
+    }
+    
+    /*--======== EPISODIOS ========--*/   
+    .contenedor_podcast {
+        width: 86%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info_podcast, .thumbnail_podcast {
+        width: 60%;
+        margin: 1.5rem;
+    }
+    
+        
+    /*--======== INTEGRANTES ========--*/ 
+    .integrantes {
+        background: #000;
+    }
+    
+    .contenedor_integrantes {
+        width: 96%;
+        flex-wrap: wrap;
+    }
+    
+    .caja_integrante {
+        width: 65%;
+        margin: 1rem;
+    }
+    
+    .datos_integrante {
+        width: 85%;
+        height: auto;
+    }
+    
+    .nombre_integrante {       
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0 0 0 1.3rem;
+    }
+    
+    /*--======== CONTACTO ========--*/
+    .contacto {
+        background: #0a1934;
+    }
+    
+    .formulario {
+        width: 80%;
+    }
+    
+    footer {
+        min-height: 120px;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .redes_footer {
+        width: 75%;
+        margin: 1rem auto;
+        justify-content: center;
+    }
+    
+    .redes_footer a {
+        margin: 1rem auto;
+    }
+    
+    .creditos {
+        width: 90%;
+        margin: 0 auto 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/*----    CELULARES PEQUEÑO    ----*/
+/*  Max 320  */
+
+@media only screen and (max-width: 320px)  {
+    
+    /*--======== HOME ========--*/
+    h2, h3 {
+        width: 96%;
+        margin: 2%;
+        text-align: center;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    /*------   menu hamburgueusa ------*/
+    label.checkbtn {
+        min-width: 50px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;    
+    }
+    
+    label.checkbtn img {
+        width: 50px;
+    }
+    .menu-icon{
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    .nav_menu ul{
+        display: block;
+        position: fixed;
+        top:70px;
+        left:-100%;
+        background: #222;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba(16, 26, 38, .9);
+    }
+    
+     .nav_menu ul li{
+        padding: 2.8rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        
+    }
+    
+    .nav_menu ul p {
+        display: none;
+    }
+    #menu_cerrar {
+        display: none;
+    }
+    #check:checked ~ label #menu_abrir{
+        display: none;
+    }
+    #check:checked ~ label #menu_cerrar{
+        display: block;
+    }
+    
+    #check:checked ~ ul{
+        left: 0;
+        transition: all .25s;
+    }
+    
+    #check:target {
+        left: 0;
+        transition: all .25s;
+    }
+    .nav_menu ul li a:checked {
+        left:-100%;
+    }
+
+    /*-----------------*/
+    
+    .logo_home {
+        width: 80%;
+    }
+    
+    /*--======== PODCAST ========--*/    
+    .bat_right, .bat_left {
+        display: none;
+    }
+    
+    .info_bienvenida {
+        width: 90%;
+    }
+
+    .info_bienvenida p {
+        width: 90%;
+    }
+    
+    /*--======== EPISODIOS ========--*/   
+    .contenedor_podcast {
+        width: 86%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info_podcast, .thumbnail_podcast {
+        width: 60%;
+        margin: 1.5rem;
+    }
+    
+    /*--======== INTEGRANTES ========--*/   
+    .contenedor_integrantes {
+        width: 96%;
+        flex-wrap: wrap;
+    }
+    
+    .caja_integrante {
+        width: 65%;
+        margin: 1rem;
+    }
+    
+    .datos_integrante {
+        width: 85%;
+        height: auto;
+    }
+    
+    .nombre_integrante {       
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0 0 0 1.3rem;
+    }
+    
+    /*--======== CONTACTO ========--*/
+    .formulario {
+        width: 80%;
+    }
+    
+    footer {
+        min-height: 120px;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .redes_footer {
+        width: 75%;
+        margin: 1rem auto;
+        justify-content: center;
+    }
+    
+    .redes_footer a {
+        margin: 1rem auto;
+    }
+    
+    .creditos {
+        width: 90%;
+        margin: 0 auto 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
