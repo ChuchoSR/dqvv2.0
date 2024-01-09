@@ -45,7 +45,7 @@ async function cargarEpisodios(apiUrl) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+/* document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('miFormulario'); // Reemplaza 'miFormulario' con el ID de tu formulario
 
     formulario.addEventListener('submit', function (event) {
@@ -59,7 +59,57 @@ document.addEventListener('DOMContentLoaded', function () {
         // Limpia los campos del formulario
         formulario.reset();
     });
+}); */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.getElementById('miFormulario');
+    const overlay = document.getElementById('overlay');
+    const cAlert = document.getElementById('customAlert');
+    const btnEnviar = document.querySelector('.btn_enviar');
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Deshabilitar el botón de envío para evitar envíos múltiples
+        btnEnviar.disabled = true;
+
+        // Muestra la capa de fondo
+        overlay.style.display = 'block';
+
+        // Muestra el mensaje de agradecimiento suavemente
+        cAlert.style.display = 'block';
+        setTimeout(function () {
+            cAlert.style.opacity = '1';
+        }, 10);
+
+        // Muestra el mensaje de agradecimiento
+        const popUp = document.createElement('div');
+        popUp.classList.add('popUp');
+        popUp.innerHTML = '<p>¡Gracias por ponerte en contacto con nosotros, pronto recibirás respuesta de nuestra parte y recuerda... De que vuelan, vuelan...!</p>';
+        document.body.appendChild(popUp);
+
+        // Después de un tiempo, oculta la capa de fondo y elimina el mensaje
+        setTimeout(function () {
+            overlay.style.display = 'none';
+            cAlert.style.opacity = '0';
+            popUp.remove();
+
+            // Limpiar campos del formulario y habilitar el botón de envío nuevamente
+            formulario.reset();
+            btnEnviar.disabled = false;
+        }, 3000);
+    });
 });
+
+
+
+
+
+
+
+
+
+
 
 
 // Agregar el controlador de eventos al formulario

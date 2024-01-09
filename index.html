@@ -19,6 +19,7 @@
             <a href="#home"><img src="img/dqvv_icon.svg" alt="De_Que_Vuelan_Vuelan_Podcast"></a>  
         </div>
         <nav class="nav_menu">
+            <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="menu_icon" id="menu_abrir"><img src="img/menu_icon.svg"></i> 
                 <i class="menu_icon" id="menu_cerrar"><img src="img/cerrar_menu_icon.svg"></i>   
@@ -41,7 +42,7 @@
             <img src="img/De_Que_Vuelan_Vuelan_Logo.svg" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
         </div>
         <h3 class="tagDQVV" data-aos="fade-up"
-     data-aos-duration="2000">#DQVV</h3>
+        data-aos-duration="2000">#DQVV</h3>
     </section>
     
     
@@ -130,13 +131,16 @@
                         class="formulario"
                         id="miFormulario">
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" placeholder="Nombre" style="color: #fff">
+                        <input required type="text" name="name" id="name" placeholder="Nombre">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" name="email" id="email" placeholder="Correo electrónico" style="color: #fff">
+                        <input required type="email" name="email" id="email" placeholder="Correo electrónico">
                         <label for="message">Mensaje</label>
-                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje" style="color: #fff"></textarea>
+                        <textarea required name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
                         <input class="btn_enviar" type="submit" value="Enviar">
                     </form>
+                    <div id="customAlert" class="customAlert">
+                        <h2 class="msjAlert">¡Gracias por ponerte en contacto con nosotros, pronto recibirás respuesta de nuestra parte y recuerda... De que vuelan, vuelan...!</h2>
+                    </div>
                 </div>
             </article>
         </div>
@@ -144,10 +148,10 @@
     
     <footer>
         <div class="redes_footer">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://instagram.com/dequevuelanvuelanpodcast?utm_medium=copy_link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/De-que-vuelan-vuelan-111078464456540/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com/channel/UCwdPa9D5SkZOizmcuGYaELQ"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://open.spotify.com/show/1xiDDqMD7QTPlfsvCrzpp7?si=PVWPnmrOThGONp7SyR-Erg&utm_source=copy-link"><i class="fa-brands fa-spotify"></i></a>
         </div>       
         <div class="creditos">
             <p>Copyright © 2024 - De que vuelan, vuelan.</p>
@@ -159,6 +163,7 @@
         <img src="imagenPC.jpg" alt="Imagen">
     </picture>
 -->
+<div id="overlay"></div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="main.js"></script>

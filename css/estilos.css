@@ -61,20 +61,21 @@ a {
 
 /*=============================================================*/
 /*----    HEADER    ----*/
+/*=============================================================*/
 header {
     width: 100%;
     height: 80px;
     background-color: #101726;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;  
+    justify-content: flex-start;  
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
 nav {
-    width: 85%;
+    width: 80%;
     height: auto;
     min-height: 60px;
     margin: 0;
@@ -110,12 +111,13 @@ nav ul li a {
 
 nav p {
     font-size: 0.8rem;
-    padding: 0 20px;
+    padding: 0 2.2rem;
     margin: 0;
 }
 
 nav a:hover {
     color: #efe215;
+    transition: 0.5s;
 }
 
 .logo_nav {
@@ -137,13 +139,13 @@ nav a:hover {
 .menu_icon img{
     width: 30px;
 }
-
+/*=============================================================*/
 /*----    FINAL HEADER    ----*/
 /*=============================================================*/
 
 /*=============================================================*/
 /*----    HOME INICIO    ----*/
-
+/*=============================================================*/
 .home {
     min-height: 100vh;
     background-color: #152749;
@@ -176,14 +178,14 @@ nav a:hover {
     height: auto;
     transition-delay: 100ms;
 }
-
+/*=============================================================*/
 /*----    FINAL HOME    ----*/
 /*=============================================================*/
 
 /*=============================================================*/
 
 /*----    PODCAST INICIO    ----*/
-
+/*=============================================================*/
 .podcast {
     min-height: 100vh;
     background-color: #001333;
@@ -224,14 +226,13 @@ nav a:hover {
     margin: 0;
     align-self: flex-start;
 }
-
-
+/*=============================================================*/
 /*----    FINAL PODCAST    ----*/
 /*=============================================================*/
 
 /*=============================================================*/
 /*----    EPISODIOS INICIO    ----*/
-
+/*=============================================================*/
 .episodios {
     box-sizing: border-box;
     min-height: 100vh;
@@ -267,35 +268,40 @@ nav a:hover {
 
 .info_podcast {
     box-sizing: border-box;
-    border: solid 3px #f9e005;
-    width: 30%;
+    border: solid 2px #4a6d7d;
+    width: 45%;
     height: auto;
-    min-height: 300px;
-    border-radius: 2rem;
-    margin: 40px 2rem;
+    min-height: 200px;
+    border-radius: 1rem;
+    margin: 2.5rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .thumbnail_podcast {
-    width: 30%;
-    min-height: 150px;
-    background-color: #17568c;
-    border-radius: 2rem;
-    margin: 40px 2rem;
-    border: solid 3px #f9e005;
+    width: 35%;
+    min-height: 100px;
+    height: auto;
+    margin: 2.5rem 1rem;  
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.thumbnail_podcast img {
+    width: 96%;
+    height: auto;
+}
+/*=============================================================*/
 /*----    FINAL EPISODIOS    ----*/
 /*=============================================================*/
 
 /*=============================================================*/
 /*----    INTEGRANTES INICIO    ----*/
-
+/*=============================================================*/
 .integrantes {
     min-height: 90vh;
     background-color: #000;
@@ -394,14 +400,14 @@ nav a:hover {
     line-height: normal;
     margin: 0 0 0 1.2rem;
 }
-
+/*=============================================================*/
 /*----    FINAL INTEGRANTES   ----*/
 
 /*=============================================================*/
 
 /*=============================================================*/
 /*----    CONTACTO INICIO    ----*/
-
+/*=============================================================*/
 .contacto {
     width: 100%;
     min-height: 70vh;
@@ -460,6 +466,7 @@ input, textarea {
     font-size: .8rem;
     line-height: 1.2rem;
     box-sizing: border-box;
+    color: #fff;
 }
 
 textarea {
@@ -497,13 +504,51 @@ input::placeholder, textarea::placeholder {
     color: #182843;
 }
 
+.customAlert{
+    display: none;
+    /* opacity: 1px 1px 1px 1px green; */
+    width: 800px;
+    height: 150px;
+    position: absolute;
+    bottom: -3870px;
+    right: 540px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
 
+.msjAlert{
+    width: 100%;
+    font-family:"Mailart", 'Open Sans', arial, sans-serif, helvetica;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+    display: none; /* Ocultar inicialmente */
+    z-index: 9; /* Asegurarse de que esté en la parte superior de otros elementos */
+}  
+/*=============================================================*/
 /*----    FINAL CONTACTO    ----*/
 /*=============================================================*/
 
 /*=============================================================*/
 /*----    FOOTER INICIO    ----*/
-
+/*=============================================================*/
 footer {
     width: 100%;
     min-height: 100px;
@@ -528,6 +573,7 @@ footer {
     color: #f5e102;
     font-size: 1.5rem;
     margin: .5rem 1rem;
+    transition: 0.5s;
 }
 
 .redes_footer a:hover {
@@ -547,682 +593,752 @@ footer {
     line-height: 1.8rem; 
     margin: .5rem 1rem;
 }
-
+/*=============================================================*/
 /*----     FINAL FOOTER   ----*/
 /*=============================================================*/
 
 /*----    MEDIA QUERYS    ----*/
 
 /*----    MONITORES GRANDES    ----*/
-/*  MIN-WIDTH 1386 */
 @media only screen and (min-width: 1387px)  {
-    
     .caja_integrante {
         width: 30%;
         max-width: 330px;
     }
-
 }
 
-/*----    MONITORES NORMALES    ----*/
-/*  Desde 1025 a 1328-1386 */
+/*----    MONITORES    ----*/
 @media only screen and (min-width: 1125px) and (max-width: 1386px)  {
-
-    .caja_integrante {
-        width: 30%;
-        max-width: 330px;
-    }
     
-    .formulario {
-        width: 35%;
-    }
-
+    /*--======== INTEGRANTES ========--*/
+        .caja_integrante {
+            width: 30%;
+            max-width: 330px;
+        }
+    /*--======== CONTACTO ========--*/
+        .formulario {
+            width: 35%;
+        }
 }
 
 /*----    LAPTOPS    ----*/
-/*  Desde 961 a 1024 */
-@media only screen and (min-width: 961px) and (max-width: 1124px)  {    
-
-
+@media only screen and (min-width: 961px) and (max-width: 1124px)  { 
+    
     /*--======== PODCAST ========--*/
-    .info_bienvenida {
-        width: 100%;
-        margin: 0;
-    }
-     
-    .info_bienvenida img {
-        width: 10%;
-    }
-    
-    .info_bienvenida p {
-        width: 80%;
-    }
-    
-    .bat_right, .bat_left {
-        margin: 2rem 0;
-        align-self: center;
-    }
+    /*=============================*/
+        .info_bienvenida {
+            width: 100%;
+            margin: 0;
+        }
+
+        .info_bienvenida img {
+            width: 10%;
+        }
+
+        .info_bienvenida p {
+            width: 80%;
+        }
+
+        .bat_right, .bat_left {
+            margin: 2rem 0;
+            align-self: center;
+        }
+    /*=============================*/
     
     /*--======== EPISODIOS ========--*/ 
-    .contenedor_podcast {
-        width: 80%;
-    }
-     
+    /*===============================*/
+        .contenedor_podcast {
+            width: 80%;
+        }
+    /*===============================*/
+    
     /*--======== INTEGRANTES ========--*/
-    .contenedor_integrantes {
-        width: 100%;
-    }
-    
-    .wrap_integrantes {
-        height: auto;
-        flex-wrap: wrap;
-    }
-    
-    .caja_integrante {
-        width: 30%;
-        max-width: 340px;
-    }
-    
-    .nombre_integrante {       
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-    
-    /*--======== CONTACTO ========--*/ 
-    .formulario {
-        width: 50%;
-    }
+    /*===============================*/
+        .contenedor_integrantes {
+            width: 100%;
+        }
 
+        .wrap_integrantes {
+            height: auto;
+            flex-wrap: wrap;
+        }
+
+        .caja_integrante {
+            width: 30%;
+            max-width: 340px;
+        }
+
+        .nombre_integrante {       
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    /*===============================*/
+    
+    /*--======== CONTACTO ========--*/
+    /*===============================*/
+        .formulario {
+            width: 50%;
+        }
+    /*===============================*/
 }
 
 /*----    TABLETS GRANDES    ----*/
-/*  desde 769 a 960  */
+
 @media only screen and (min-width: 769px) and (max-width: 960px)  {
+    /*--======== HOME ========--*/
+    /*===============================*/
+        .logo_nav {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .logo_nav img {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        nav {
+            width: 85%;
+        }
+
+        nav ul {
+            justify-content: space-evenly;
+        }
+
+        nav p {
+            padding: 0;
+        }
+    /*===============================*/
+    
     /*--======== PODCAST ========--*/
-    .info_bienvenida {
-        width: 100%;
-        margin: 0;
-    }
-    
-    
-    .info_bienvenida img {
-        width: 10%;
-    }
-    
-    .info_bienvenida p {
-        width: 80%;
-    }
-    
-    .bat_right, .bat_left {
-        margin: 2rem 0;
-        align-self: center;
-    }
+    /*===============================*/
+        .info_bienvenida {
+            width: 100%;
+            margin: 0;
+        } 
+
+        .info_bienvenida img {
+            width: 10%;
+        }
+
+        .info_bienvenida p {
+            width: 80%;
+        }
+
+        .bat_right, .bat_left {
+            margin: 2rem 0;
+            align-self: center;
+        }
+    /*===============================*/
     
     /*--======== EPISODIOS ========--*/ 
-    .contenedor_podcast {
-        width: 100%;
-    }
+    /*===============================*/
+        .contenedor_podcast {
+            width: 100%;
+        }
+    /*===============================*/
     
     /*--======== INTEGRANTES ========--*/ 
-    .contenedor_integrantes {
-        width: 96%;
-        flex-wrap: wrap;
-    }
-    
-    .caja_integrante {
-        width: 36%;
-        margin: 1rem;
-    }
-    
-    .datos_integrante {
-        width: 85%;
-        height: auto;
-    }
-    
-    .nombre_integrante {       
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin: 0 0 0 1.3rem;
-    }
+    /*===============================*/
+        .contenedor_integrantes {
+            width: 96%;
+            flex-wrap: wrap;
+        }
+
+        .caja_integrante {
+            width: 36%;
+            margin: 1rem;
+        }
+
+        .datos_integrante {
+            width: 85%;
+            height: auto;
+        }
+
+        .nombre_integrante {       
+            font-size: 1rem;
+            line-height: 1.4rem;
+            margin: 0 0 0 1.3rem;
+        }
+    /*===============================*/
     
     /*--======== CONTACTO ========--*/ 
-    .formulario {
-        width: 60%;
-    }
-
+    /*===============================*/
+        .formulario {
+            width: 60%;
+        }
+    /*===============================*/
+    
 }
 
 /*----    TABLETS PEQUEÑAS    ----*/
-/*  desde 481 a 768  */
 @media only screen and (min-width: 481px) and (max-width: 768px)  {
     
-    /*--======== HOME ========--*/ 
-    body {
-        width: 100%;
-    }
-    
-    h1, h2 {
-        width: 96%;
-        margin: 2%;
-        text-align: center;
-    }
- 
-/*------   menu hamburgueusa ------*/
-    label.checkbtn {
-        min-width: 50px;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        width: auto;
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;    
-    }
-    
-    label.checkbtn img {
-        width: 50px;
-    }
-    .menu-icon{
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-    
-    .nav_menu ul{
-        display: block;
-        position: fixed;
-        top:70px;
-        left:-100%;
-        background: #222;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-        background-color: rgba(16, 26, 38, .9);
-    }
-    
-     .nav_menu ul li{
-        padding: 2.8rem;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        
-    }
-    
-    .nav_menu ul p {
-        display: none;
-    }
-    #menu_cerrar {
-        display: none;
-    }
-    #check:checked ~ label #menu_abrir{
-        display: none;
-    }
-    #check:checked ~ label #menu_cerrar{
-        display: block;
-    }
-    
-    #check:checked ~ ul{
-        left: 0;
-        transition: all .25s;
-    }
-    
-    #check:target {
-        left: 0;
-        transition: all .25s;
-    }
-    .nav_menu ul li a:checked {
-        left:-100%;
-    }
+    /*--======== HOME ========--*/
+    /*===============================*/
+        body {
+            width: 100%;
+        }
 
-    /*-----------------*/
+        h1, h2 {
+            width: 96%;
+            margin: 2%;
+            text-align: center;
+        }
+ 
+        /*------   MENU MOVIL ------*/
     
-    .logo_home {
-        width: 80%;
-    }
+            label.checkbtn {
+                min-width: 50px;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                width: auto;
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;    
+            }
+
+            label.checkbtn img {
+                width: 50px;
+            }
+
+            .menu-icon{
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+            }
+
+            .nav_menu ul{
+                display: block;
+                position: fixed;
+                top:70px;
+                left:-100%;
+                background: #222;
+                width: 100%;
+                height: 100vh;
+                right: 0;
+                background-color: rgba(16, 26, 38, .9);
+            }
+
+             .nav_menu ul li{
+                padding: 2.8rem;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+
+            .nav_menu ul p {
+                display: none;
+            }
+
+            #menu_cerrar {
+                display: none;
+            }
+
+            #check:checked ~ label #menu_abrir{
+                display: none;
+            }
+
+            #check:checked ~ label #menu_cerrar{
+                display: block;
+            }
+
+            #check:checked ~ ul{
+                left: 0;
+                transition: all .25s;
+            }
+
+            #check:target {
+                left: 0;
+                transition: all .25s;
+            }
+
+            .nav_menu ul li a:checked {
+                left:-100%;
+            }
+        /*------------------------------*/
+
+        .logo_home {
+            width: 80%;
+        }
+    /*===============================*/
     
     /*--======== PODCAST ========--*/
-    .bat_right, .bat_left {
-        margin: 2rem 0;
-        align-self: center;
-    }
-    
-    .info_bienvenida, .info_bienvenida p {
-        width: 90%;
-    }
-    
+    /*===============================*/
+        .bat_right, .bat_left {
+            margin: 2rem 0;
+            align-self: center;
+        }
+
+        .info_bienvenida, .info_bienvenida p {
+            width: 90%;
+        }
+    /*===============================*/
+
     /*--======== EPISODIOS ========--*/ 
-    .contenedor_podcast {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .info_podcast, .thumbnail_podcast {
-        width: 60%;
-        margin: 1.5rem;
-    }
+    /*===============================*/
+        .contenedor_podcast {
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info_podcast, .thumbnail_podcast {
+            width: 60%;
+            margin: 1.5rem;
+        }
+    /*===============================*/
     
     /*--======== INTEGRANTES ========--*/
-    .contenedor_integrantes {
-        width: 96%;
-        flex-wrap: wrap;
-    }
-    
-    .caja_integrante {
-        width: 65%;
-        margin: 1rem;
-    }
-    
-    .datos_integrante {
-        width: 85%;
-        height: auto;
-    }
-    
-    .nombre_integrante {       
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin: 0 0 0 1.3rem;
-    }
+    /*===============================*/
+        .contenedor_integrantes {
+            width: 96%;
+            flex-wrap: wrap;
+        }
+
+        .caja_integrante {
+            width: 65%;
+            margin: 1rem;
+        }
+
+        .datos_integrante {
+            width: 85%;
+            height: auto;
+        }
+
+        .nombre_integrante {       
+            font-size: 1rem;
+            line-height: 1.4rem;
+            margin: 0 0 0 1.3rem;
+        }
+    /*===============================*/
     
     /*--======== CONTACTO ========--*/
-    .formulario {
-        width: 80%;
-    }
-    
-    footer {
-        min-height: 120px;
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .redes_footer {
-        width: 75%;
-        margin: 1rem auto;
-        justify-content: center;
-    }
-    
-    .redes_footer a {
-        margin: 1rem auto;
-    }
-    
-    .creditos {
-        width: 90%;
-        margin: 0 auto 2rem auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    /*===============================*/
+        .formulario {
+            width: 80%;
+        }
+
+        footer {
+            min-height: 120px;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redes_footer {
+            width: 75%;
+            margin: 1rem auto;
+            justify-content: center;
+        }
+
+        .redes_footer a {
+            margin: 1rem auto;
+        }
+
+        .creditos {
+            width: 90%;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    /*===============================*/
 
 }
 
 /*----    CELULARES BASE    ----*/
-/*  Max 480  */
 @media only screen and (min-width: 321px) and (max-width: 480px)  {
     
-    /*--======== HOME ========--*/ 
-    h2, h3 {
-        width: 96%;
-        margin: 2%;
-        text-align: center;
-    }
+    /*--======== HOME ========--*/
+    /*===============================*/
+        h2, h3 {
+            width: 96%;
+            margin: 2%;
+            text-align: center;
+        }
 
-    .home {
-        background-image: url("../img/home_bg_min.jpg");
-        background-size: cover;
-        background-position: center bottom;
-    }
+        .home {
+            background-image: url("../img/home_bg_min.jpg");
+            background-size: cover;
+            background-position: center bottom;
+        }
     
-    /*------   menu hamburgueusa ------*/
-    label.checkbtn {
-        min-width: 50px;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        width: auto;
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;    
-    }
-    
-    label.checkbtn img {
-        width: 50px;
-    }
-    .menu-icon{
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-    
-    .nav_menu ul{
-        display: block;
-        position: fixed;
-        top:70px;
-        left:-100%;
-        background: #222;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-        background-color: rgba(16, 26, 38, .9);
-    }
-    
-     .nav_menu ul li{
-        padding: 2.8rem;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        
-    }
-    
-    .nav_menu ul p {
-        display: none;
-    }
-    #menu_cerrar {
-        display: none;
-    }
-    #check:checked ~ label #menu_abrir{
-        display: none;
-    }
-    #check:checked ~ label #menu_cerrar{
-        display: block;
-    }
-    
-    #check:checked ~ ul{
-        left: 0;
-        transition: all .25s;
-    }
-    
-    #check:target {
-        left: 0;
-        transition: all .25s;
-    }
-    .nav_menu ul li a:checked {
-        left:-100%;
-    }
+        /*------   MENU MOVIL ------*/
+            label.checkbtn {
+                min-width: 50px;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                width: auto;
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;    
+            }
 
-    /*-----------------*/
+            label.checkbtn img {
+                width: 50px;
+            }
     
-    .logo_home {
-        width: 80%;
-    }
+            .menu-icon{
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+            }
+
+            .nav_menu ul{
+                display: block;
+                position: fixed;
+                top:70px;
+                left:-100%;
+                background: #222;
+                width: 100%;
+                height: 100vh;
+                right: 0;
+                background-color: rgba(16, 26, 38, .9);
+            }
+
+            .nav_menu ul li{
+                padding: 2.8rem;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+
+            .nav_menu ul p {
+                display: none;
+            }
+    
+            #menu_cerrar {
+                display: none;
+            }
+    
+            #check:checked ~ label #menu_abrir{
+                display: none;
+            }
+    
+            #check:checked ~ label #menu_cerrar{
+                display: block;
+            }
+
+            #check:checked ~ ul{
+                left: 0;
+                transition: all .25s;
+            }
+
+            #check:target {
+                left: 0;
+                transition: all .25s;
+            }
+    
+            .nav_menu ul li a:checked {
+                left:-100%;
+            }
+
+        /*-----------------*/
+
+        .logo_home {
+            width: 80%;
+        }
+    /*===============================*/
     
     /*--======== PODCAST ========--*/ 
-    .info_bienvenida img {
-        width: 30%;
-    }
-    
-    .podcast {
-        background: rgba(0,19,51,1);
-        background-image: url("../img/about_bg_min.jpg");
-    }
-    
-    .bat_right, .bat_left {
-        margin: 2rem 0;
-        align-self: center;
-    }
-    
-    .info_bienvenida {
-        width: 90%;
-    }
+    /*===============================*/
+        .info_bienvenida img {
+            width: 30%;
+        }
 
-    .info_bienvenida p {
-        width: 90%;
-    }
+        .podcast {
+            background: rgba(0,19,51,1);
+            background-image: url("../img/about_bg_min.jpg");
+        }
+
+        .bat_right, .bat_left {
+            margin: 2rem 0;
+            align-self: center;
+        }
+
+        .info_bienvenida {
+            width: 90%;
+        }
+
+        .info_bienvenida p {
+            width: 90%;
+        }
+    /*===============================*/
     
-    /*--======== EPISODIOS ========--*/   
-    .contenedor_podcast {
-        width: 86%;
-        flex-direction: column;
-        align-items: center;
-    }
+    /*--======== EPISODIOS ========--*/
+    /*===============================*/
+        .contenedor_podcast {
+            width: 86%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info_podcast, .thumbnail_podcast {
+            width: 60%;
+            margin: 1.5rem;
+        }  
+    /*===============================*/
     
-    .info_podcast, .thumbnail_podcast {
-        width: 60%;
-        margin: 1.5rem;
-    }
-    
-        
     /*--======== INTEGRANTES ========--*/ 
-    .integrantes {
-        background: #000;
-    }
-    
-    .contenedor_integrantes {
-        width: 96%;
-        flex-wrap: wrap;
-    }
-    
-    .caja_integrante {
-        width: 65%;
-        margin: 1rem;
-    }
-    
-    .datos_integrante {
-        width: 85%;
-        height: auto;
-    }
-    
-    .nombre_integrante {       
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin: 0 0 0 1.3rem;
-    }
+    /*===============================*/
+        .integrantes {
+            background: #000;
+        }
+
+        .contenedor_integrantes {
+            width: 96%;
+            flex-wrap: wrap;
+        }
+
+        .caja_integrante {
+            width: 65%;
+            margin: 1rem;
+        }
+
+        .datos_integrante {
+            width: 85%;
+            height: auto;
+        }
+
+        .nombre_integrante {       
+            font-size: 1rem;
+            line-height: 1.4rem;
+            margin: 0 0 0 1.3rem;
+        }
+    /*===============================*/
     
     /*--======== CONTACTO ========--*/
-    .contacto {
-        background: #0a1934;
-    }
-    
-    .formulario {
-        width: 80%;
-    }
-    
-    footer {
-        min-height: 120px;
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .redes_footer {
-        width: 75%;
-        margin: 1rem auto;
-        justify-content: center;
-    }
-    
-    .redes_footer a {
-        margin: 1rem auto;
-    }
-    
-    .creditos {
-        width: 90%;
-        margin: 0 auto 2rem auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    /*===============================*/
+        .contacto {
+            background: #0a1934;
+        }
+
+        .formulario {
+            width: 80%;
+        }
+
+        footer {
+            min-height: 120px;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redes_footer {
+            width: 75%;
+            margin: 1rem auto;
+            justify-content: center;
+        }
+
+        .redes_footer a {
+            margin: 1rem auto;
+        }
+
+        .creditos {
+            width: 90%;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    /*===============================*/
 
 }
 
 /*----    CELULARES PEQUEÑO    ----*/
-/*  Max 320  */
-
 @media only screen and (max-width: 320px)  {
     
     /*--======== HOME ========--*/
-    h2, h3 {
-        width: 96%;
-        margin: 2%;
-        text-align: center;
-    }
-    
-    nav {
-        display: none;
-    }
-    
-    /*------   menu hamburgueusa ------*/
-    label.checkbtn {
-        min-width: 50px;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        width: auto;
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;    
-    }
-    
-    label.checkbtn img {
-        width: 50px;
-    }
-    .menu-icon{
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-    
-    .nav_menu ul{
-        display: block;
-        position: fixed;
-        top:70px;
-        left:-100%;
-        background: #222;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-        background-color: rgba(16, 26, 38, .9);
-    }
-    
-     .nav_menu ul li{
-        padding: 2.8rem;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        
-    }
-    
-    .nav_menu ul p {
-        display: none;
-    }
-    #menu_cerrar {
-        display: none;
-    }
-    #check:checked ~ label #menu_abrir{
-        display: none;
-    }
-    #check:checked ~ label #menu_cerrar{
-        display: block;
-    }
-    
-    #check:checked ~ ul{
-        left: 0;
-        transition: all .25s;
-    }
-    
-    #check:target {
-        left: 0;
-        transition: all .25s;
-    }
-    .nav_menu ul li a:checked {
-        left:-100%;
-    }
+    /*===============================*/
+        h2, h3 {
+            width: 96%;
+            margin: 2%;
+            text-align: center;
+        }
 
-    /*-----------------*/
+        nav {
+            display: none;
+        }
     
-    .logo_home {
-        width: 80%;
-    }
-    
-    /*--======== PODCAST ========--*/    
-    .bat_right, .bat_left {
-        display: none;
-    }
-    
-    .info_bienvenida {
-        width: 90%;
-    }
+        /*------   MENU MOVIL ------*/
+            label.checkbtn {
+                min-width: 50px;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                width: auto;
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;    
+            }
 
-    .info_bienvenida p {
-        width: 90%;
-    }
+            label.checkbtn img {
+                width: 50px;
+            }
+
+            .menu-icon{
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+            }
+
+            .nav_menu ul{
+                display: block;
+                position: fixed;
+                top:70px;
+                left:-100%;
+                background: #222;
+                width: 100%;
+                height: 100vh;
+                right: 0;
+                background-color: rgba(16, 26, 38, .9);
+            }
+
+             .nav_menu ul li{
+                padding: 2.8rem;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+
+            .nav_menu ul p {
+                display: none;
+            }
     
-    /*--======== EPISODIOS ========--*/   
-    .contenedor_podcast {
-        width: 86%;
-        flex-direction: column;
-        align-items: center;
-    }
+            #menu_cerrar {
+                display: none;
+            }
     
-    .info_podcast, .thumbnail_podcast {
-        width: 60%;
-        margin: 1.5rem;
-    }
+            #check:checked ~ label #menu_abrir{
+                display: none;
+            }
     
-    /*--======== INTEGRANTES ========--*/   
-    .contenedor_integrantes {
-        width: 96%;
-        flex-wrap: wrap;
-    }
+            #check:checked ~ label #menu_cerrar{
+                display: block;
+            }
+
+            #check:checked ~ ul{
+                left: 0;
+                transition: all .25s;
+            }
+
+            #check:target {
+                left: 0;
+                transition: all .25s;
+            }
     
-    .caja_integrante {
-        width: 65%;
-        margin: 1rem;
-    }
+            .nav_menu ul li a:checked {
+                left:-100%;
+            }
+
+        /*-----------------------------*/
     
-    .datos_integrante {
-        width: 85%;
-        height: auto;
-    }
+        .logo_home {
+            width: 80%;
+        }
+    /*===============================*/
     
-    .nombre_integrante {       
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin: 0 0 0 1.3rem;
-    }
+    /*--======== PODCAST ========--*/ 
+    /*===============================*/
+        .bat_right, .bat_left {
+            display: none;
+        }
+
+        .info_bienvenida {
+            width: 90%;
+        }
+
+        .info_bienvenida p {
+            width: 90%;
+        }
+    /*===============================*/
+    
+    /*--======== EPISODIOS ========--*/ 
+    /*===============================*/
+        .contenedor_podcast {
+            width: 86%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info_podcast, .thumbnail_podcast {
+            width: 60%;
+            margin: 1.5rem;
+        }
+    /*===============================*/
+    
+    /*--======== INTEGRANTES ========--*/ 
+    /*===============================*/
+        .contenedor_integrantes {
+            width: 96%;
+            flex-wrap: wrap;
+        }
+
+        .caja_integrante {
+            width: 65%;
+            margin: 1rem;
+        }
+
+        .datos_integrante {
+            width: 85%;
+            height: auto;
+        }
+
+        .nombre_integrante {       
+            font-size: 1rem;
+            line-height: 1.4rem;
+            margin: 0 0 0 1.3rem;
+        }
+    /*===============================*/
     
     /*--======== CONTACTO ========--*/
-    .formulario {
-        width: 80%;
-    }
-    
-    footer {
-        min-height: 120px;
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .redes_footer {
-        width: 75%;
-        margin: 1rem auto;
-        justify-content: center;
-    }
-    
-    .redes_footer a {
-        margin: 1rem auto;
-    }
-    
-    .creditos {
-        width: 90%;
-        margin: 0 auto 2rem auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    /*===============================*/
+        .formulario {
+            width: 80%;
+        }
 
+        footer {
+            min-height: 120px;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redes_footer {
+            width: 75%;
+            margin: 1rem auto;
+            justify-content: center;
+        }
+
+        .redes_footer a {
+            margin: 1rem auto;
+        }
+
+        .creditos {
+            width: 90%;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    /*===============================*/
+
+    
 }
-
-
-
