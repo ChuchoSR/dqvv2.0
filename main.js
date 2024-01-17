@@ -1,21 +1,21 @@
-// Reemplaza 'YOUR_API_KEY' con tu clave API
+// clave API
 const apiKey = 'AIzaSyA_d3qidBx7-N5v_j8_Wv1__LUjpPaFXz8';
 
-// Reemplaza 'CHANNEL_ID' con el ID de tu canal de YouTube
+//ID del canal de YouTube
 const channelId = 'UCwdPa9D5SkZOizmcuGYaELQ';
 
-// Reemplaza 'FORMSPREE_URL' con la URL específica de tu formulario en Formspree
+// URL específica del formulario en Formspree
 const formspreeUrl = 'https://formspree.io/f/xeqyqwzr';
 
 // Función para cargar episodios
-async function cargarEpisodios(apiUrl) {
+/* async function cargarEpisodios(apiUrl) {
     try {
         // Hacer la solicitud a la API
         const response = await fetch(apiUrl);
         const data = await response.json();
 
         // Procesar la respuesta y cargar episodios
-        const episodiosContainer = document.querySelector('.contenedor_podcast');
+        const episodiosContainer = document.getElementById('contenedor_podcast');
         episodiosContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos episodios
 
         // Iterar sobre los videos y agregar episodios al contenedor
@@ -27,39 +27,99 @@ async function cargarEpisodios(apiUrl) {
 
             // Estructura HTML modificada
             const episodioHTML = `
-                <div class="info_podcast" data-aos="fade-right">
-                    <h2 class="titulo-episodio titulo">${titulo}</h2>
-                    <p>${descripcion}</p>
-                </div>
-                <div class="thumbnail_podcast" data-aos="fade-left">
-                    <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-                        <img class="img-episodio" src="${imagen}" alt="${titulo}">
+    <article class="podcast_individual">   
+        <div class="info_podcast" data-aos="fade-right">
+            <p class="nombre_podcast">${titulo}</p>
+            <p>${descripcion}</p>
+            <div class="episodioSpotify">    
+                <p class="link_podcast">
+                    Escuchar en 
+                    <a href="#">
+                        <i class="fa-brands fa-spotify"></i>
                     </a>
-                </div>
-            `;
+                </p>
+            </div>
+        </div>
+        <div class="thumbnail_podcast" data-aos="fade-left">
+            <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                <img class="img-episodio" src="${imagen}" alt="${titulo}">
+            </a>
+        </div>
+    </article> 
+`;
 
-            episodiosContainer.innerHTML += episodioHTML;
+
+            episodiosContainer.insertAdjacentHTML('beforeend', episodioHTML);
+            console.log(episodioHTML);
         });
     } catch (error) {
         console.error('Error al recuperar datos:', error);
     }
+} */
+
+// Función para cargar los episodios desde YouTube
+function cargarEpisodiosDesdeYouTube() {
+    const contenedorPodcast = document.getElementById("contenedor_podcast");
+
+    // Construir la URL de la solicitud
+    const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=5`;
+
+    // Realizar la solicitud a la API de YouTube
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Recorrer los resultados y crear elementos para cada episodio
+            data.items.forEach(item => {
+                const episode = item.snippet;
+
+                const article = document.createElement("article");
+                article.className = "podcast_individual";
+
+                const infoPodcast = document.createElement("div");
+                infoPodcast.className = "info_podcast";
+
+                const nombrePodcast = document.createElement("p");
+                nombrePodcast.className = "nombre_podcast";
+                nombrePodcast.textContent = episode.title;
+
+                const descripcionPodcast = document.createElement("p");
+                descripcionPodcast.textContent = episode.description;
+
+                infoPodcast.appendChild(nombrePodcast);
+                infoPodcast.appendChild(descripcionPodcast);
+
+                const thumbnailPodcast = document.createElement("div");
+                thumbnailPodcast.className = "thumbnail_podcast";
+
+                // Enlace al episodio en YouTube
+                const enlaceEpisodio = document.createElement("a");
+                enlaceEpisodio.href = `https://www.youtube.com/watch?v=${item.id.videoId}`;
+                enlaceEpisodio.target = "_blank"; // Para abrir en una nueva pestaña
+
+                // Imagen del episodio
+                const imagenPodcast = document.createElement("img");
+                imagenPodcast.src = episode.thumbnails.medium.url;
+
+                // Agregar la imagen al enlace
+                enlaceEpisodio.appendChild(imagenPodcast);
+                thumbnailPodcast.appendChild(enlaceEpisodio);
+
+                article.appendChild(infoPodcast);
+                article.appendChild(thumbnailPodcast);
+
+                contenedorPodcast.appendChild(article);
+            });
+        })
+        .catch(error => console.error('Error al cargar episodios desde YouTube:', error));
 }
 
-/* document.addEventListener('DOMContentLoaded', function () {
-    const formulario = document.getElementById('miFormulario'); // Reemplaza 'miFormulario' con el ID de tu formulario
+// Llama a la función para cargar los episodios al cargar la página
+window.onload = cargarEpisodiosDesdeYouTube;
 
-    formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe de forma convencional
+// Llama a la función para cargar los episodios al cargar la página
+window.onload = cargarEpisodiosDesdeYouTube;
 
-        // Aquí puedes agregar lógica adicional, como enviar datos a un servidor si es necesario.
 
-        // Muestra un mensaje de agradecimiento
-        alert('¡Gracias por ponerte en contacto con nosotros, pronto recibirás respuesta de nuestra parte y recuerda... De que vuelan, vuelan...!');
-
-        // Limpia los campos del formulario
-        formulario.reset();
-    });
-}); */
 
 document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('miFormulario');
@@ -70,44 +130,33 @@ document.addEventListener('DOMContentLoaded', function () {
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        
+        // Deshabilitar el botón de enviar para evitar envíos múltiples
         btnEnviar.disabled = true;
 
-        
+        // Mostrar overlay y customAlert
         overlay.style.display = 'block';
+        cAlert.style.opacity = '1';
 
-       
-        cAlert.style.display = 'block';
-        setTimeout(function () {
-            cAlert.style.opacity = '1';
-        }, 10);
-
-        
+        // Crear y mostrar el popUp
         const popUp = document.createElement('div');
         popUp.classList.add('popUp');
-        popUp.innerHTML = '<p>¡Gracias por ponerte en contacto con nosotros, pronto recibirás respuesta de nuestra parte y recuerda... De que vuelan, vuelan...!</p>';
+        popUp.innerHTML = '<h2>¡Gracias por ponerte en contacto con nosotros, pronto recibirás respuesta de nuestra parte y recuerda... De que vuelan, vuelan...!</h2>';
         document.body.appendChild(popUp);
 
-        
+        // Ocultar overlay y customAlert después de un tiempo
         setTimeout(function () {
             overlay.style.display = 'none';
             cAlert.style.opacity = '0';
+
+            // Eliminar el popUp
             popUp.remove();
 
-            
+            // Restablecer el formulario y habilitar el botón de enviar
             formulario.reset();
             btnEnviar.disabled = false;
         }, 3000);
     });
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -138,8 +187,13 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         });
 });
 
-// Llamar a la función para cargar episodios cuando la página se cargue
 document.addEventListener('DOMContentLoaded', function () {
-    const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&key=${apiKey}`;
-    cargarEpisodios(apiUrl);
+    const navLinks = document.querySelectorAll('.menu-mobil a');
+    const checkbox = document.getElementById('check');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            checkbox.checked = false; // Desmarcar la casilla al hacer clic en un enlace
+        });
+    });
 });
