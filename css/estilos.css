@@ -611,7 +611,8 @@ input::placeholder, textarea::placeholder {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); 
     display: none; 
-    z-index: 9; 
+    z-index: 9;
+    
 }  
 
 .popUp {
@@ -1002,7 +1003,9 @@ footer {
 
         .info_podcast, .thumbnail_podcast {
             width: 60%;
-            margin: 1.5rem;
+            padding: 0;
+            margin: 0;
+            /* margin: 1.5rem; */
         }
     /*===============================*/
     
@@ -1082,6 +1085,13 @@ footer {
             background-image: url("../img/home_bg_min.jpg");
             background-size: cover;
             background-position: center bottom;
+        }
+
+        .logo_nav img{
+            left: 14px;
+            position: absolute;
+            /* margin-left: -19px; */
+            top: 12px;
         }
     
         /*------   MENU MOVIL ------*/
@@ -1192,16 +1202,31 @@ footer {
     
     /*--======== EPISODIOS ========--*/
     /*===============================*/
-        .contenedor_podcast {
-            width: 86%;
-            flex-direction: column;
-            align-items: center;
-        }
+    .contenedor_podcast {
+        width: 90%;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .info_podcast, .thumbnail_podcast {
-            width: 60%;
-            margin: 1.5rem;
-        }  
+    .info_podcast, .thumbnail_podcast {
+        width: 60%;
+        margin: 0.9rem;
+        padding: 0;
+    }
+    
+    .thumbnail_podcast {
+        margin: 0;
+    }
+    
+    .podcast_individual{
+        gap: 5px;
+        padding: 0;
+        margin: 0;
+        }
+        .nombre_podcast{
+            text-align: center;
+        }
     /*===============================*/
     
     /*--======== INTEGRANTES ========--*/ 

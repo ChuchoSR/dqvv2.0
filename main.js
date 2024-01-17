@@ -7,55 +7,6 @@ const channelId = 'UCwdPa9D5SkZOizmcuGYaELQ';
 // URL específica del formulario en Formspree
 const formspreeUrl = 'https://formspree.io/f/xeqyqwzr';
 
-// Función para cargar episodios
-/* async function cargarEpisodios(apiUrl) {
-    try {
-        // Hacer la solicitud a la API
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        // Procesar la respuesta y cargar episodios
-        const episodiosContainer = document.getElementById('contenedor_podcast');
-        episodiosContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos episodios
-
-        // Iterar sobre los videos y agregar episodios al contenedor
-        data.items.forEach(video => {
-            const titulo = video.snippet.title;
-            const descripcion = video.snippet.description;
-            const imagen = video.snippet.thumbnails.medium.url;
-            const videoId = video.id.videoId;
-
-            // Estructura HTML modificada
-            const episodioHTML = `
-    <article class="podcast_individual">   
-        <div class="info_podcast" data-aos="fade-right">
-            <p class="nombre_podcast">${titulo}</p>
-            <p>${descripcion}</p>
-            <div class="episodioSpotify">    
-                <p class="link_podcast">
-                    Escuchar en 
-                    <a href="#">
-                        <i class="fa-brands fa-spotify"></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="thumbnail_podcast" data-aos="fade-left">
-            <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-                <img class="img-episodio" src="${imagen}" alt="${titulo}">
-            </a>
-        </div>
-    </article> 
-`;
-
-
-            episodiosContainer.insertAdjacentHTML('beforeend', episodioHTML);
-            console.log(episodioHTML);
-        });
-    } catch (error) {
-        console.error('Error al recuperar datos:', error);
-    }
-} */
 
 // Función para cargar los episodios desde YouTube
 function cargarEpisodiosDesdeYouTube() {
@@ -116,16 +67,16 @@ function cargarEpisodiosDesdeYouTube() {
 // Llama a la función para cargar los episodios al cargar la página
 window.onload = cargarEpisodiosDesdeYouTube;
 
-// Llama a la función para cargar los episodios al cargar la página
-window.onload = cargarEpisodiosDesdeYouTube;
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const formulario = document.getElementById('miFormulario');
     const overlay = document.getElementById('overlay');
     const cAlert = document.getElementById('customAlert');
     const btnEnviar = document.querySelector('.btn_enviar');
+
+    // Agregar transiciones CSS
+    overlay.style.transition = 'opacity 1s ease-in-out';
+    cAlert.style.transition = 'opacity 1s ease-in-out';
 
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -135,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Mostrar overlay y customAlert
         overlay.style.display = 'block';
+        overlay.style.opacity = '1';
         cAlert.style.opacity = '1';
 
         // Crear y mostrar el popUp
@@ -145,21 +97,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Ocultar overlay y customAlert después de un tiempo
         setTimeout(function () {
-            overlay.style.display = 'none';
+            overlay.style.opacity = '0';
             cAlert.style.opacity = '0';
+            popUp.style.opacity = '0';
 
-            // Eliminar el popUp
-            popUp.remove();
+            // Eliminar el popUp después de que la transición haya terminado
+            setTimeout(function () {
+                overlay.style.display = 'none';
+                cAlert.style.display = 'none';
+                popUp.remove();
 
-            // Restablecer el formulario y habilitar el botón de enviar
-            formulario.reset();
-            btnEnviar.disabled = false;
+                // Restablecer el formulario y habilitar el botón de enviar
+                formulario.reset();
+                btnEnviar.disabled = false;
+            }, 1000); // Tiempo igual a la duración de la transición
         }, 3000);
     });
 });
-
-
-
 
 // Agregar el controlador de eventos al formulario
 document.getElementById('miFormulario').addEventListener('submit', function (event) {
