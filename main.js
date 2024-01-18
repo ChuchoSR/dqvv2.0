@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 formulario.reset();
                 btnEnviar.disabled = false;
             }, 1000); // Tiempo igual a la duración de la transición
-        }, 3000);
+        }, 6000);
     });
 });
 
