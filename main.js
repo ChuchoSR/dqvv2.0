@@ -34,6 +34,7 @@ function cargarEpisodiosDesdeYouTube() {
                 nombrePodcast.textContent = episode.title;
 
                 const descripcionPodcast = document.createElement("p");
+                descripcionPodcast.className = "descripcion_episodio";
                 descripcionPodcast.textContent = episode.description;
 
                 infoPodcast.appendChild(nombrePodcast);
